@@ -1,24 +1,24 @@
-package com.expertsoft.system.model;
+package com.expertsoft.model;
 
 public class PaymentInfo {
 
-    public enum Provider {
+    public enum Type {
         VISA,
         MASTERCARD
     }
 
     public PaymentInfo() {}
 
-    private Provider provider;
+    private Type type;
     private String cardNumber;
     private String securityCode;
 
-    public Provider getProvider() {
-        return provider;
+    public Type getType() {
+        return type;
     }
 
-    public void setProvider(Provider provider) {
-        this.provider = provider;
+    public void setType(Type type) {
+        this.type = type;
     }
 
     public String getSecurityCode() {

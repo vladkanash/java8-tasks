@@ -1,6 +1,6 @@
 package com.expertsoft;
 
-import com.expertsoft.system.model.*;
+import com.expertsoft.model.*;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -184,7 +184,7 @@ public class TestUtils {
         final int idx = i % cardNumbers.size();
         final PaymentInfo paymentInfo = new PaymentInfo();
         paymentInfo.setCardNumber(cardNumbers.get(idx));
-        paymentInfo.setProvider(PaymentInfo.Provider.values()[idx % PaymentInfo.Provider.values().length]);
+        paymentInfo.setType(PaymentInfo.Type.values()[idx % PaymentInfo.Type.values().length]);
         paymentInfo.setSecurityCode(cardNumbers.get(idx).substring(6, 9));
         return paymentInfo;
     }

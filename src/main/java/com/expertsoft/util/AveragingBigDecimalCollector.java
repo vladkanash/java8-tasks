@@ -1,4 +1,4 @@
-package com.expertsoft.system.util;
+package com.expertsoft.util;
 
 import java.math.BigDecimal;
 import java.util.Collections;

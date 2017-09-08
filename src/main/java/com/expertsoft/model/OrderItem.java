@@ -1,4 +1,4 @@
-package com.expertsoft.system.model;
+package com.expertsoft.model;
 
 public class OrderItem {
 
