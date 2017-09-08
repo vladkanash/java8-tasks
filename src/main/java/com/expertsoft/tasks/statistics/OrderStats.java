@@ -1,0 +1,112 @@
+package com.expertsoft.tasks.statistics;
+
+import com.expertsoft.model.*;
+import com.expertsoft.util.AveragingBigDecimalCollector;
+
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.stream.Stream;
+
+class OrderStats {
+
+    /**
+     * Task 1 (⚫⚫⚪⚪⚪)
+     *
+     * Given a stream of customers, return the list of orders, paid using VISA credit card.
+     *
+     * @param customers stream of customers
+     * @return List, containing orders payed with VISA credit card
+     */
+    static List<Order> visaOrders(final Stream<Customer> customers) {
+        return null;
+    }
+
+    /**
+     * Task 2 (⚫⚫⚪⚪⚪)
+     *
+     * Given a stream of orders, return a map, where keys are different order sizes and values are lists of orders,
+     * referring to this sizes. Order size here is just a total number of products in the order.
+     *
+     * @param orders stream of orders
+     * @return map, where order size values mapped to lists of orders
+     */
+    static Map<Integer, List<Order>> orderSizes(final Stream<Order> orders) {
+        return null;
+    }
+
+    /**
+     * Task 3 (⚫⚫⚫⚪⚪)
+     *
+     * Given a stream of orders, return true only if EVERY order in the stream contains at least
+     * one product of the provided color and false otherwise.
+     *
+     * @param orders stream of orders
+     * @param color product color to test
+     * @return boolean, representing if every order in the stream contains red product
+     */
+    static Boolean hasColorProduct(final Stream<Order> orders, final Product.Color color) {
+        return null;
+    }
+
+    /**
+     * Task 4 (⚫⚫⚫⚫⚪)
+     *
+     * Given a stream of customers, return the map, where customer email is mapped to a number of different credit cards he/she used by the customer.
+     *
+     * @param customers stream of customers
+     * @return Map, where for each customer email there is a long referencing a number of different credit cards this customer uses.
+     */
+    static Map<String, Long> cardsCountForCustomer(final Stream<Customer> customers) {
+        return null;
+    }
+
+    /**
+     * Task 5 (⚫⚫⚫⚫⚫)
+     *
+     * Given a stream of customers, return the optional, containing the most popular country name,
+     * that is, the name of the country set in addressInfo by the biggest amount of customers.
+     * If there are two or more countries with the same amount of customers, return the country name that has a smallest length.
+     * If customer stream is empty, Optional.empty should be returned.
+     *
+     * Example: For the stream, containing
+     *      Customer#1 -> USA
+     *      Customer#2 -> France
+     *      Customer#3 -> Japan
+     *      Customer#4 -> USA
+     *      Customer#5 -> Japan
+     *
+     *      "USA" should be returned.
+     *
+     * @param customers stream of customers
+     * @return java.util.Optional containing the name of the most popular country
+     */
+    static Optional<String> mostPopularCountry(final Stream<Customer> customers) {
+        return null;
+    }
+
+    /**
+     * Task 6 (⚫⚫⚫⚫⚫)
+     *
+     * Given a stream of customers, return the average product price for the provided credit card number.
+     *
+     * Info: If order contains the following order items:
+     *  [
+     *      Product1(quantity = 2, price = 100$),
+     *      Product2(quantity = 1, price = 160$)
+     *  ]
+     * then the average product price for this order will be 120$ ((100 * 2 + 160 * 1) / 3)
+     *
+     * Hint: Since product prices are stored as BigDecimal objects, you are provided with the collector implementation
+     *       to compute the average value of BigDecimal stream.
+     *
+     * @param customers stream of customers
+     * @param cardNumber card number to check
+     * @return Average price of the product, ordered with the provided card
+     */
+    static BigDecimal averageProductPriceForCreditCard(final Stream<Customer> customers, final String cardNumber) {
+        final AveragingBigDecimalCollector collector = new AveragingBigDecimalCollector();
+        return null;
+    }
+}
