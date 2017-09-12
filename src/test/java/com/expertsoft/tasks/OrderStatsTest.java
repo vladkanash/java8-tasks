@@ -1,4 +1,4 @@
-package com.expertsoft.tasks.statistics;
+package com.expertsoft.tasks;
 
 import com.expertsoft.TestUtils;
 import com.expertsoft.model.Customer;
