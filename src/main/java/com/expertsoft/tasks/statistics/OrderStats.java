@@ -33,7 +33,7 @@ class OrderStats {
     static List<Order> ordersForCardType(final Stream<Customer> customers, PaymentInfo.CardType cardType) {
         return customers
                 .flatMap(c -> c.getOrders().stream())
-                .filter(o -> o.getPaymentInfo().getType().equals(PaymentInfo.Type.VISA))
+                .filter(o -> o.getPaymentInfo().getCardType().equals(cardType))
                 .collect(Collectors.toList());
     }
 
