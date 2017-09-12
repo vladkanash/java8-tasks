@@ -9,17 +9,25 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Stream;
 
+/**
+ * This class provides several methods to collect statistical information from customers and orders of an e-shop.
+ * Your task is to implement methods of this class using Java 8 Stream API.
+ * Each method is covered with a number of unit tests. You can use <code>mvn test</code> call to check your implementation.
+ *
+ * Refer to the <code>com.expertsoft.model</code> package to observe the domain model of the shop.
+ */
 class OrderStats {
 
     /**
      * Task 1 (⚫⚫⚪⚪⚪)
      *
-     * Given a stream of customers, return the list of orders, paid using VISA credit card.
+     * Given a stream of customers, return the list of orders, paid using provided credit card type (Visa or MasterCard).
      *
      * @param customers stream of customers
-     * @return List, containing orders payed with VISA credit card
+     * @param cardType credit card type
+     * @return list, containing orders paid with provided card type
      */
-    static List<Order> visaOrders(final Stream<Customer> customers) {
+    static List<Order> ordersForCardType(final Stream<Customer> customers, PaymentInfo.CardType cardType) {
         return null;
     }
 
@@ -44,7 +52,7 @@ class OrderStats {
      *
      * @param orders stream of orders
      * @param color product color to test
-     * @return boolean, representing if every order in the stream contains red product
+     * @return boolean, representing if every order in the stream contains product of specified color
      */
     static Boolean hasColorProduct(final Stream<Order> orders, final Product.Color color) {
         return null;
@@ -56,7 +64,7 @@ class OrderStats {
      * Given a stream of customers, return the map, where customer email is mapped to a number of different credit cards he/she used by the customer.
      *
      * @param customers stream of customers
-     * @return Map, where for each customer email there is a long referencing a number of different credit cards this customer uses.
+     * @return map, where for each customer email there is a long referencing a number of different credit cards this customer uses.
      */
     static Map<String, Long> cardsCountForCustomer(final Stream<Customer> customers) {
         return null;
@@ -103,7 +111,7 @@ class OrderStats {
      *
      * @param customers stream of customers
      * @param cardNumber card number to check
-     * @return Average price of the product, ordered with the provided card
+     * @return average price of the product, ordered with the provided card
      */
     static BigDecimal averageProductPriceForCreditCard(final Stream<Customer> customers, final String cardNumber) {
         final AveragingBigDecimalCollector collector = new AveragingBigDecimalCollector();

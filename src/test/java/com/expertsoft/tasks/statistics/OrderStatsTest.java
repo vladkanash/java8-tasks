@@ -3,6 +3,7 @@ package com.expertsoft.tasks.statistics;
 import com.expertsoft.TestUtils;
 import com.expertsoft.model.Customer;
 import com.expertsoft.model.Order;
+import com.expertsoft.model.PaymentInfo;
 import com.expertsoft.model.Product;
 import org.junit.Before;
 import org.junit.Test;
@@ -31,7 +32,7 @@ public class OrderStatsTest {
 
     @Test
     public void task1Test1() {
-        final List<Order> visaOrders = OrderStats.visaOrders(customerStream);
+        final List<Order> visaOrders = OrderStats.ordersForCardType(customerStream, PaymentInfo.CardType.VISA);
         assertEquals("There are 17 orders payed with VISA card in this stream",
                 17, visaOrders.size());
         assertEquals("Order #24529 was payed using VISA card",
@@ -40,7 +41,7 @@ public class OrderStatsTest {
 
     @Test
     public void task1Test2() {
-        final List<Order> visaOrders = OrderStats.visaOrders(customerStream.limit(3));
+        final List<Order> visaOrders = OrderStats.ordersForCardType(customerStream.limit(3), PaymentInfo.CardType.VISA);
         assertEquals("There are 11 orders payed with VISA card in this stream",
                 11, visaOrders.size());
         assertEquals("Order #47021 was payed using VISA card",
@@ -49,7 +50,7 @@ public class OrderStatsTest {
 
     @Test
     public void task1Test3() {
-        final List<Order> visaOrders = OrderStats.visaOrders(Stream.empty());
+        final List<Order> visaOrders = OrderStats.ordersForCardType(Stream.empty(), PaymentInfo.CardType.MASTERCARD);
         assertEquals("There are not orders payed with VISA card in this stream",
                 0, visaOrders.size());
     }
