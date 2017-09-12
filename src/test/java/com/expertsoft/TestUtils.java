@@ -184,7 +184,7 @@ public class TestUtils {
         final int idx = i % cardNumbers.size();
         final PaymentInfo paymentInfo = new PaymentInfo();
         paymentInfo.setCardNumber(cardNumbers.get(idx));
-        paymentInfo.setType(PaymentInfo.Type.values()[idx % PaymentInfo.Type.values().length]);
+        paymentInfo.setCardType(PaymentInfo.CardType.values()[idx % PaymentInfo.CardType.values().length]);
         paymentInfo.setSecurityCode(cardNumbers.get(idx).substring(6, 9));
         return paymentInfo;
     }

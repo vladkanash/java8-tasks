@@ -2,23 +2,23 @@ package com.expertsoft.model;
 
 public class PaymentInfo {
 
-    public enum Type {
+    public enum CardType {
         VISA,
         MASTERCARD
     }
 
     public PaymentInfo() {}
 
-    private Type type;
+    private CardType cardType;
     private String cardNumber;
     private String securityCode;
 
-    public Type getType() {
-        return type;
+    public CardType getCardType() {
+        return cardType;
     }
 
-    public void setType(Type type) {
-        this.type = type;
+    public void setCardType(CardType cardType) {
+        this.cardType = cardType;
     }
 
     public String getSecurityCode() {
