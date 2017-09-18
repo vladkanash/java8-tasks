@@ -146,9 +146,18 @@ public class TestUtils {
         final Order order = new Order();
         orderId += rand.nextInt(ORDER_ID_INCREMENT);
         order.setOrderId(orderId);
-        order.setOrderItems(generateOrderItems(randomInt(MIN_ORDER_ITEMS, MAX_ORDER_ITEMS)));
+        order.setOrderItems(getDistinctOrderItems());
         order.setPaymentInfo(generatedPaymentInfos.get(rand.nextInt(generatedPaymentInfos.size())));
         return order;
+    }
+
+    private static List<OrderItem> getDistinctOrderItems() {
+        return generateOrderItems(randomInt(MIN_ORDER_ITEMS, MAX_ORDER_ITEMS))
+                .stream()
+                .collect(Collectors.toMap(OrderItem::getProduct, OrderItem::getQuantity, Integer::sum))
+                .entrySet().stream()
+                .map(e -> new OrderItem(e.getKey(), e.getValue()))
+                .collect(Collectors.toList());
     }
 
     private static OrderItem createOrderItem() {
@@ -202,7 +211,9 @@ public class TestUtils {
     }
 
     private static int randomInt(final int min, final int max) {
-        if (min >= max) throw new IllegalArgumentException("min >= max");
+        if (min >= max) {
+            throw new IllegalArgumentException("min >= max");
+        }
         return rand.nextInt(max - min) + min;
     }
 }

@@ -1,4 +1,4 @@
-package com.expertsoft.tasks.statistics;
+package com.expertsoft.tasks;
 
 import com.expertsoft.model.*;
 import com.expertsoft.util.AveragingBigDecimalCollector;
