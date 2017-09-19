@@ -101,12 +101,12 @@ class OrderStats {
      *
      * Info: If order contains the following order items:
      *  [
-     *      Product1(quantity = 2, price = 100$),
-     *      Product2(quantity = 1, price = 160$)
+     *      Product1(price = 100$, quantity = 2),
+     *      Product2(price = 160$, quantity = 1)
      *  ]
      * then the average product price for this order will be 120$ ((100 * 2 + 160 * 1) / 3)
      *
-     * Hint: Since product prices are stored as BigDecimal objects, you are provided with the collector implementation
+     * Hint: Since product prices are represented as BigDecimal objects, you are provided with the collector implementation
      *       to compute the average value of BigDecimal stream.
      *
      * @param customers stream of customers
